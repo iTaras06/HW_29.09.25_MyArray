@@ -1,9 +1,14 @@
 #include "MyArray.h"
 #include <iostream>
 using namespace std;
-MyArray::MyArray() : arr(nullptr), size(0) {}	
-MyArray::MyArray(int* a, int s) : size(s)
+MyArray::MyArray()
 {
+	arr = nullptr;
+	size = 0;
+}	
+MyArray::MyArray(int* a, int s) 
+{
+	size = s;
 	arr = new int[size];
 	for (int i = 0; i < size; i++)
 	{
