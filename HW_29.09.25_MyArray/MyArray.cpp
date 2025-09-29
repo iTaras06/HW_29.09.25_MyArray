@@ -32,7 +32,6 @@ MyArray::MyArray(MyArray&& obj)
 }	
 MyArray MyArray::operator+(MyArray& obj)
 {
-	// Concatenation of two arrays
 	MyArray temp;	
 	temp.size = size + obj.size;	
 	temp.arr = new int[temp.size];
@@ -49,7 +48,6 @@ MyArray MyArray::operator+(MyArray& obj)
 }
 MyArray MyArray::operator-(MyArray& obj)
 {
-	// if subarray is part of the main array, remove the elements of the subarray from the main array
 	MyArray temp;
 	temp.size = size;
 	temp.arr = new int[temp.size];
@@ -93,7 +91,6 @@ MyArray& MyArray::operator=(const MyArray& obj)
 	return *this;
 }
 
-// Adding element to the end of the array
 MyArray& MyArray::operator++()
 {
 	int* temp = new int[size + 1];
@@ -101,13 +98,12 @@ MyArray& MyArray::operator++()
 	{
 		temp[i] = arr[i];
 	}
-	temp[size] = 0; // Adding default value 0
+	temp[size] = 0;
 	size++;
 	delete[] arr;
 	arr = temp;
 	return *this;
 }
-// Removing one element from the end of array
 MyArray& MyArray::operator--()
 {
 	if (size == 0)
